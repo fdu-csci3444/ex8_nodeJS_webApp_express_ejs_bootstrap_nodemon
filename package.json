@@ -1,0 +1,20 @@
+{
+    "name": "ex8_nodeJS_webApp_express_ejs_bootstrap_nodemon",
+    "version": "1.0.0",
+    "description": "Example project introducing node module express",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start_express_ejs_bootstrap_with_nodemon": "nodemon express_ejs_bootstrap/server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^2.5.7",
+        "express": "^4.16.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.12.1"
+    }
+}

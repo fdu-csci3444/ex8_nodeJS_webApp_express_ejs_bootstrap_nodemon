@@ -1,0 +1,33 @@
+# files to be ignored by git #
+##############################
+letGitIgnoreMe.txt
+
+# compiled output directories to be ignored by git #
+####################################################
+target/
+/dist
+/tmp
+/out-tsc
+
+# local git repo to be ignored by git as well #
+###############################################
+.git/
+
+# node dependencies to be ignored #
+###################################
+node_modules/
+
+# IDE and editor specific config files and directories to be ignored by git as well #
+#####################################################################################
+.project
+.classpath
+.settings/
+.c9
+.idea/
+*.launch
+*.sublime-workspace
+
+# istanbul and nyc unit test coverage report directories #
+##########################################################
+coverage/
+.nyc_output/

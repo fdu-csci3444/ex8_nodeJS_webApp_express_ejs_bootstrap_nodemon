@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head.ejs %>
+</head>
+
+<body class="container">
+    <header>
+        <% include ../partials/header.ejs %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Number Of Records:
+                <%= numberOfRecords %>
+            </h1>
+            <ul>
+                <% for(var i=0; i< results.length; i++) {%>
+                    <li>Record title:
+                        <%= results[i].recordTitle %> of Record Id:
+                            <%= results[i].recordId %>
+                    </li>
+                    <% } %>
+            </ul>
+
+            <!-- NOTE ilker using new ES5 forEach below, instead of conventional for loop of above -->
+            <h1>Number Of Records:
+                <%= numberOfRecords %>
+            </h1>
+            <ul>
+                <% results.forEach(function(result, index) { %>
+                    <li>Index:
+                        <%= i %> with Record title:
+                            <%= result.recordTitle %> of Record Id:
+                                <%= result.recordId %>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+
+</html>
