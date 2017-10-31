@@ -85,6 +85,13 @@ npm install nodemon --save-dev
 npm run start_with_nodemon
 ```
 
+# curl summary
++ curl is a command line http client that is part of git bash install
++ curl allows one to easily invoke a web page from command line
+```
+curl -i "http://localhost:8012"
+```
+
 # Setup from clone
 + fork this project
 + clone your fork (in below example using the source repo, use your fork repo instead)
