@@ -84,6 +84,22 @@ npm install nodemon --save-dev
 ```
 npm run start_with_nodemon
 ```
++ NOTE to stop app started with nodemon, killing the node process via below will not be sufficient. It does not kill the node server that was started behind the scenes. So instead do "Ctrl + C" to stop nodemon.
+```
+ps -elf | grep node
+kill -9 whateverPIDaboveGives
+```
++ to find out PID (the last column) of process listening on a port, let's say 8014
+    - -a displays all connections and listening ports
+    - -b displays executables involved in creating each connection or listening port
+    - -n displays addresses and port numbers in numerical form
+    - -o displays owning process PID associated with each connection
+```
+netstat -abno | grep 8014
+or
+ps -W | grep node | grep -v node_modules
+NOTE doing "kill -9 whateverPIDaboveGives" on PID obtained from above fails
+```
 
 # curl summary
 + curl is a command line http client that is part of git bash install
@@ -163,3 +179,18 @@ nodemon server.js
 npm run start_express_ejs_bootstrap_with_nodemon
 ```
 + connect to it via browser "http://localhost:8014"
++ or connect via curl below. NOTE curl -d passes data, -H specifies content type
+```
+curl -i "http://localhost:8014"
+curl -i "http://localhost:8014/about"
+curl -i "http://localhost:8014/records/123"
+curl -i  http://localhost:8014/records/123
+
+curl -i "http://localhost:8014/api/help"
+curl -i "http://localhost:8014/api/help" -X GET
+curl -i "http://localhost:8014/api/help" -X POST -d "param1=value1&param2=value2"
+curl -i "http://localhost:8014/api/help" -X PUT  -d "param1=value1&param2=value2"
+curl -i "http://localhost:8014/api/help" -X PUT  -d "@dataFile.txt"
+curl -i "http://localhost:8014/api/help" -X PUT  -d "@dataFile.json"
+curl -i "http://localhost:8014/api/help" -X POST -d '{"param1":"value1", "param2":"value2"}' -H "Content-Type: application/json"
+```
