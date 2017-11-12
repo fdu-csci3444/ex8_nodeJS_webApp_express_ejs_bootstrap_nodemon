@@ -186,11 +186,16 @@ curl -i "http://localhost:8014/about"
 curl -i "http://localhost:8014/records/123"
 curl -i  http://localhost:8014/records/123
 
-curl -i "http://localhost:8014/api/help"
-curl -i "http://localhost:8014/api/help" -X GET
-curl -i "http://localhost:8014/api/help" -X POST -d "param1=value1&param2=value2"
-curl -i "http://localhost:8014/api/help" -X PUT  -d "param1=value1&param2=value2"
-curl -i "http://localhost:8014/api/help" -X PUT  -d "@dataFile.txt"
-curl -i "http://localhost:8014/api/help" -X PUT  -d "@dataFile.json"
-curl -i "http://localhost:8014/api/help" -X POST -d '{"param1":"value1", "param2":"value2"}' -H "Content-Type: application/json"
+curl -i "http://localhost:8014/api/v1/help"
+curl -i "http://localhost:8014/api/v1/help" -X GET
+curl -i "http://localhost:8014/api/v1/help" -X POST -d "param1=value1&param2=value2"
+curl -i "http://localhost:8014/api/v1/help" -X PUT  -d "param1=value1&param2=value2"
+curl -i "http://localhost:8014/api/v1/help" -X PUT  -d "@dataFile.txt"
+curl -i "http://localhost:8014/api/v1/help" -X PUT  -d "@data.json"
+curl -i "http://localhost:8014/api/v1/help" -X POST -d '{"param1":"value1", "param2":"value2"}' -H "Content-Type: application/json"
+
+curl -i "http://localhost:8014/api/v2/help"
+curl -i "http://localhost:8014/api/v2/help" -X GET
+curl -i "http://localhost:8014/api/v2/help" -X POST -d "param1=value1&param2=value2"
+curl -i "http://localhost:8014/api/v2/help" -X PUT  -d "param1=value1&param2=value2"
 ```
