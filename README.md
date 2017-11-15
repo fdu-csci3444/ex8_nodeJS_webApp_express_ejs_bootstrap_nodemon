@@ -74,10 +74,10 @@ npm view pug
 ```
 npm install nodemon --save-dev
 ```
-+ then you add a script to package.json to start your app (assuming server.js is starting point of your app) like
++ then you add a script to package.json to start your app (assuming main_webServer.js is starting point of your app) like
 ```
 "scripts": {
-    "start_with_nodemon": "nodemon server.js" 
+    "start_with_nodemon": "nodemon main_webServer.js" 
 }
 ```
 + then you start your app (express server) using above script
@@ -159,26 +159,26 @@ ps -elf | grep node
 kill -9  whateverThePidYouGetFromAboveLine
 ```
 # NodeJS web app using; express + ejs + bootstrap CSS
-+ see express_ejs_bootstrap direcoty. In particular server.js and its page templates under views/pages dir and partials used by its page templates under views/partials.
++ see express_ejs_bootstrap direcoty. In particular main_webServer.js and its page templates under views/pages dir and partials used by its page templates under views/partials.
 + NOTE that using bootstrap CSS loaded from a CDN (Content Delivery Network) for CSS definitions
-+ add a script to package.json to start app (note in below example server.js is starting point of this app)
++ add a script to package.json to start app (note in below example main_webServer.js is starting point of this app)
 ```
 "scripts": {
-    "start_express_ejs_bootstrap_with_nodemon": "nodemon express_ejs_bootstrap/server.js" 
+    "start_express_ejs_bootstrap_with_nodemon": "nodemon express_ejs_bootstrap/main_webServer.js" 
 }
 ```
 + then you start app (express server) using above script
 ```
 npm run start_express_ejs_bootstrap_with_nodemon
 ```
-+ can start it via node or nodemon or the nodemon script in package.json. NOTE you need to pass full server.js to nodemon.
++ can start it via node or nodemon or the nodemon script in package.json. NOTE you need to pass full main_webServer.js to nodemon unless you setup the "main" attribute of package.json to it
 ```
-node server
-node server.js
-nodemon server.js
+node main_webServer
+node main_webServer.js
+nodemon main_webServer.js
 npm run start_express_ejs_bootstrap_with_nodemon
 ```
-+ connect to it via browser "http://localhost:8014"
++ connect to it via browser "http://localhost:8014" and click navigation tabs in header
 + or connect via curl below. NOTE curl -d passes data, -H specifies content type
 ```
 curl -i "http://localhost:8014"
