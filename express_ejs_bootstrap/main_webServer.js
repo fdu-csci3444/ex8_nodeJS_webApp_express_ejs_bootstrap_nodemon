@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
         name: 'ilker',
         lastname: 'kiris'
     };
-    res.render('./pages/index.ejs', data2template);
+    res.render('./pages/home.ejs', data2template);
 });
 
 // set records route
@@ -48,14 +48,14 @@ app.get('/records', function(req, res) {
 app.get('/records/:recordId', function(req, res) {
     res.send('<h1>' + 'text/html directly returned from server.js - record id from request that is in url:' + req.params.recordId + '</h1>');
 });
+// NOTE ilker you can test above route with below;
+// curl -i "http://localhost:8014/records/54321"
 
 // set about route
 app.get('/about', function(req, res) {
     // res.status(200).render('about'); // NOTE_4 ilker, if no default "view engine" specified above, this will complain; "No default engine was specied and no extension was provided"
     res.status(200).render('pages/about.html'); // NOTE_3b ilker, this is OK if you had done "app.engine('html', require('ejs').renderFile);" before
 });
-// NOTE ilker you can test above route with below;
-// curl -i "http://localhost:8014/records/54321"
 
 // set "/api/v1/help" route using "express.Router" that support GET, POST, PUT
 var apiV1HelpRouter = express.Router();
